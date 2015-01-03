@@ -29,13 +29,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${EXTRA_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ${EXTRA_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${EXTRA_CXX_FLAGS} -Wall -DTEST_VERBOSE")
 
-add_executable(runTests src/runTests.cpp src/plistTests.cpp src/pugixml.cpp
+add_executable(cocoa2dPlist src/cocoa2dPlist.cpp src/plistTests.cpp src/pugixml.cpp
     src/Plist.cpp src/PlistDate.cpp)
 
 IF(MSVC10)
 	target_link_libraries(runTests UnitTest++.vsnet2010-${MY_BUILD_TYPE}.lib) 
 ELSE()
-	target_link_libraries(runTests UnitTest++)
+	target_link_libraries(cocoa2dPlist UnitTest++)
 ENDIF()
 
 ADD_CUSTOM_COMMAND(
