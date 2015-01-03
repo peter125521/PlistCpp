@@ -27,6 +27,8 @@ static void createCocoa2xAnimation()
     char anim_name[256] = {0, };
     char frame_name[256] = {0, };
 
+    frames_count_per_anim = hc;
+
     /* create animations. */
     {
         int id, id_max = vc * hc / frames_count_per_anim;
@@ -95,8 +97,8 @@ static void createCocoa2xTexture()
                 frame["y"] = int(v*height/vc);
                 frame["width"] = int(width/hc);
                 frame["height"] = int(height/vc);
-                frame["offsetX"] = int(h*width/hc);
-                frame["offsetY"] = int(v*height/vc);
+                frame["offsetX"] = int(0);
+                frame["offsetY"] = int(0);
                 frame["originalWidth"] = int(width/hc);
                 frame["originalHeight"] = int(height/vc);
                 frame_dict[buf] = frame;
