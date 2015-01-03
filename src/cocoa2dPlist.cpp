@@ -93,12 +93,12 @@ static void createCocoa2xTexture()
                 map<string, boost::any> frame;
                 frame["x"] = int(h*width/hc);
                 frame["y"] = int(v*height/vc);
-                frame["width"] = int(width);
-                frame["height"] = int(height);
+                frame["width"] = int(width/hc);
+                frame["height"] = int(height/vc);
                 frame["offsetX"] = int(h*width/hc);
                 frame["offsetY"] = int(v*height/vc);
-                frame["originalWidth"] = int(width);
-                frame["originalHeight"] = int(height);
+                frame["originalWidth"] = int(width/hc);
+                frame["originalHeight"] = int(height/vc);
                 frame_dict[buf] = frame;
                 frame.clear();
                 id++;
